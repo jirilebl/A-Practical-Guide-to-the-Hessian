@@ -33,7 +33,7 @@
 
 \maketitle
 
-\section{Two dimensions}
+\section*{Two dimensions}
 
 Let us start with two dimensions.
 Let $f(x,y)$ be a function of two variables, and let us
@@ -337,13 +337,14 @@ We write half the matrix for simplicity.
 The function is $x^2+y^2$, and
 its graph looks like:
 \begin{center}
-\includegraphics[width=4.0in]{xsqplusysq}
+\includegraphics[width=3.65in]{xsqplusysq}
 \end{center}
 
 \bigskip
 
-\pagebreak[2]
+\pagebreak[3]
 \textbf{Two negative eigenvalues:}
+\nopagebreak
 
 The model case is when the matrix looks like:
 \begin{equation*}
@@ -357,7 +358,7 @@ The model case is when the matrix looks like:
 The function is $-x^2-y^2$, and
 its graph looks like:
 \begin{center}
-\includegraphics[width=4.0in]{minusxsqminusysq}
+\includegraphics[width=3.65in]{minusxsqminusysq}
 \end{center}
 
 \bigskip
@@ -377,7 +378,7 @@ The model case is when the matrix looks like:
 The function is $x^2-y^2$, and
 its graph looks like:
 \begin{center}
-\includegraphics[width=4.0in]{xsqminusysq}
+\includegraphics[width=3.65in]{xsqminusysq}
 \end{center}
 
 \bigskip
@@ -465,12 +466,14 @@ that we didn't have to compute that.  That it is a minimum is perhaps
 hard to tell from the graph.  We can mostly see the sharp sloping upwards
 due to the eigenvalue $15.28$, but the sloping upwards from the center along
 the ``valley floor'' due to the $0.72$ is harder to discern.
+\nopagebreak
 \begin{center}
-\includegraphics[width=4.0in]{all-upwards.pdf}
+\includegraphics[width=3.65in]{all-upwards.pdf}
 \end{center}
 
 \bigskip
 
+\pagebreak[2]
 \textbf{Example:} Let us modify our example just a tiny bit.
 Consider
 $$
@@ -504,12 +507,12 @@ slightly downwards.  From drawing a graph it might not be totally easy to
 immediately see that it is a saddle.  Look at how similar it is to the
 previous graph.
 \begin{center}
-\includegraphics[width=4.0in]{mostly-upwards.pdf}
+\includegraphics[width=3.65in]{mostly-upwards.pdf}
 \end{center}
 
 \bigskip
 
-\section{Degenerate Hessian}
+\section*{Degenerate Hessian}
 
 For a degenerate Hessian, we can sometimes read off some information, but
 just not everything.  Sometimes, we do not get any information at all.
@@ -521,7 +524,7 @@ $$
 It is not difficult to convince yourself that this function is always
 positive except at the origin, when it is zero.  So the origin is a minimum.
 \begin{center}
-\includegraphics[width=4.0in]{degenerate-min.pdf}
+\includegraphics[width=3.65in]{degenerate-min.pdf}
 \end{center}
 
 However if you compute the Hessian  you find
@@ -545,7 +548,7 @@ $$
 The graph of this is a saddle (Just notice that $g(x,0) = x^2$ and
 $g(0,y) = -y^4$).
 \begin{center}
-\includegraphics[width=4.0in]{degenerate-saddle.pdf}
+\includegraphics[width=3.65in]{degenerate-saddle.pdf}
 \end{center}
 
 Let's compute the Hessian:
@@ -572,7 +575,7 @@ zero.  If the function has a maximum then all the functions are negative or
 zero.  But just because a function has only positive or zero eigenvalues
 does not mean the function has a minimum.
 
-\section{Peano's example}
+\section*{Peano's example}
 
 When the Hessian is degenerate,
 one has to be careful with trying to just check for extrema (min or max) on
@@ -584,7 +587,7 @@ This function is zero on the sets where $y=x^2$ and $y=2x^2$, the two
 parabolas in the following picture.  It is negative outside the space
 between these two lines and positive between the two lines.
 \begin{center}
-\includegraphics[width=4.0in]{peanocurves}
+\includegraphics[width=3.65in]{peanocurves}
 \end{center}
 Suppose we restrict the function to any line. For example, we pick an angle
 $\theta$, and consider the line through the origin at the angle 
@@ -610,7 +613,7 @@ which clearly has a strict maximum.
 
 But $f$ is a saddle!  It is just a ``bent saddle.''
 \begin{center}
-\includegraphics[width=4.0in]{peanosurface}
+\includegraphics[width=3.65in]{peanosurface}
 \end{center}
 Clearly the function cannot have a min or a max since $f(0,0)=0$, but you
 also have points where $f$ is positive or where $f$ is negative arbitrarily
@@ -637,7 +640,7 @@ On the other hand, if the Hessian is nondegenerate, that is, it has no
 zero eigenvalues, then we did answer the question by looking at lines, since
 that is what looking at eigenvalues does.
 
-\section{More variables}
+\section*{More variables}
 
 Let's consider 3 variables, with $n$ variables being exactly the same
 idea.
@@ -846,7 +849,7 @@ If you do not get any zeros but the signs do not correspond to one of the
 above, then you have some combination of positive and negative eigenvalues
 and the critical point is a saddle.
 
-\section{Diagonalization and change of variables}
+\section*{Diagonalization and change of variables}
 
 Let us return to two variables.  Let us find the 
 change of variables that makes any function into one of the three
