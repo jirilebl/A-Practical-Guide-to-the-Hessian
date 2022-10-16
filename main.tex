@@ -35,29 +35,29 @@
 
 \section*{Two dimensions}
 
-Let us start with two dimensions.
-Let $f(x,y)$ be a function of two variables, and let us
-find the
+We start with two dimensions.
+Let $f(x,y)$ be a function of two variables,
+and let us find the
 Taylor expansion around $(x_0,y_0)$.
 Write the vector $\vv{h} = \langle x-x_0, y-y_0 \rangle$.  We
 consider $\vv{h}$ as a column vector when matrices are involved.
 We write $\vv{h}^t$ for the transpose, that is, the corresponding
-row vector.
-$$
+row vector.  The Taylor expansion of a function of two variables around $(x_0,y_0)$ can then be written as
+\[
 f(x,y) = f(x_0,y_0) \, + \,
 \nabla f\big|_{(x_0,y_0)} \cdot \vv{h}
 \, + \,
 \frac{1}{2} \vv{h}^{t} H_f\big|_{(x_0,y_0)} \vv{h} \,
 + \cdots
-$$
-$$
+\]
+\[
  = f(x_0,y_0) +
 \underbrace{\frac{\partial f}{\partial x}\bigg|_{(x_0,y_0)} (x-x_0) +
 \frac{\partial f}{\partial y}\bigg|_{(x_0,y_0)} (y-y_0)}_{\nabla
 f\big|_{(x_0,y_0)} \cdot \vv{h}}
 + {}
-$$
-$$
+\]
+\[
 {} +
 \underbrace{%
 \frac{1}{2} \frac{\partial^2 f}{\partial x^2}\bigg|_{(x_0,y_0)} (x-x_0)^2 +
@@ -66,9 +66,9 @@ $$
 \frac{1}{2} \vv{h}^{t} H_f\big|_{(x_0,y_0)} \vv{h}}
 +
 \cdots
-$$
+\]
 The $H_f$ is the so-called \emph{Hessian matrix}
-\begin{equation*}
+\[
 H_f
 =
 \begin{bmatrix}
@@ -78,9 +78,9 @@ H_f
 \frac{\partial^2 f}{\partial y^2}
 \end{bmatrix}
 .
-\end{equation*}
+\]
 The quadratic form in the computation is the part
-\begin{equation*}
+\[
 \vv{h}^{t} H_f \big|_{(x_0,y_0)} \vv{h}
 =
 \begin{bmatrix}
@@ -96,59 +96,62 @@ The quadratic form in the computation is the part
 (x-x_0) \\ (y-y_0)
 \end{bmatrix}
 .
-\end{equation*}
+\]
 
 \medskip
 
 \textbf{Example:}
-To see why this is so it is useful to look at a polynomial example.  The
+To see why this is so, it is useful to look at a polynomial example.  The
 second order approximation ought to be the best quadratic polynomial that
-approximates the function.  Thus, if we look at a quadratic polynomial the
-Taylor expansion up second order we should get the same polynomial, since it
-itself should be its best quadratic approximation.
+approximates the function.
+Thus, if we look at a quadratic polynomial,
+its Taylor expansion up second order should be the
+same polynomial,
+since it itself should be its best
+quadratic approximation.
 So consider, $f(x,y) = 1 + 2x + 3y + 4x^2+ 5xy + 6y^2$.  Compute
-$$
+\[
 \frac{\partial f}{\partial x} = 2 + 4 \cdot 2x + 5y, \qquad
 \frac{\partial^2 f}{\partial x^2} = 4 \cdot 2, \qquad
 \frac{\partial^2 f}{\partial x \partial y} = 5 ,
-$$
-$$
+\]
+\[
 \frac{\partial f}{\partial y} = 3 + 5x + 6 \cdot 2y, \qquad
 \frac{\partial^2 f}{\partial y^2} = 6 \cdot 2 .
-$$
+\]
 If we wish to expand this function at $(0,0)$, we compute
-$$
+\[
 f(0,0) = 1, \qquad
 \frac{\partial f}{\partial x}\Big|_{(0,0)} = 2, \qquad
 \frac{\partial^2 f}{\partial x^2}\Big|_{(0,0)} = 8, \qquad
 \frac{\partial^2 f}{\partial x \partial y}\Big|_{(0,0)} = 5 ,
-$$
-$$
+\]
+\[
 \frac{\partial f}{\partial y}\Big|_{(0,0)} = 3, \qquad
 \frac{\partial^2 f}{\partial y^2}\Big|_{(0,0)} = 12 .
-$$
+\]
 So
-\begin{equation*}
+\[
 f(x,y) = 1 + 2 x + 3 y + \frac{1}{2} 8 x^2 + 5 xy + \frac{1}{2} 12 y^2 ,
-\end{equation*}
+\]
 and lo and behold we got the same polynomial.
 Since we have the derivatives computed, we can also expand around another
 point.  For example, let us expand around the point $(2,1)$
-$$
+\[
 f(2,1) = 40, \qquad
 \frac{\partial f}{\partial x}\Big|_{(2,1)} = 23, \qquad
 \frac{\partial^2 f}{\partial x^2}\Big|_{(1,1)} = 8, \qquad
 \frac{\partial^2 f}{\partial x \partial y}\Big|_{(2,1)} = 5 ,
-$$
-$$
+\]
+\[
 \frac{\partial f}{\partial y}\Big|_{(2,1)} = 25, \qquad
 \frac{\partial^2 f}{\partial y^2}\Big|_{(2,1)} = 12 .
-$$
+\]
 So
-\begin{equation*}
+\[
 f(x,y) = 40 + 23(x-2) + 25 (y-1) + \frac{1}{2} 8 (x-2)^2 + 5 (x-2)(y-1) +
 \frac{1}{2} 12 (y-1)^2 .
-\end{equation*}
+\]
 
 \medskip
 
@@ -166,14 +169,14 @@ or in other words, where
 $\frac{\partial f}{\partial x} = 0$ and
 $\frac{\partial f}{\partial y} = 0$.
 
-For simplicity suppose that $x_0 = y_0 = 0$, and $f(0,0) = 0$.
-Further suppose that $(0,0)$ is a critical point, that is,
-$\nabla f|_{(0,0)} = 0$.  Then
-$$
+For simplicity, suppose that $x_0 = y_0 = 0$, and $f(0,0) = 0$.
+Further, suppose that $(0,0)$ is a critical point, that is,
+$\nabla f|_{(0,0)} = 0$.  Then,
+\[
 f(x,y) = \frac{1}{2} \vv{h}^{t} H_f\big|_{(0,0)} \vv{h}
 +
 \cdots ,
-$$
+\]
 where the dots are higher order terms in the Taylor expansion.
 So near the origin, $f$ behaves like a quadratic form.
 Suppose that $H_f$ is nondegenerate, that is, it has
@@ -182,9 +185,9 @@ no zero eigenvalues, in other words it is invertible.
 What is an \emph{eigenvalue} of a matrix $A$?
 It is a value $\lambda$ for which there exists
 a nonzero vector $\vv{v}$, called an \emph{eigenvector}, such that
-\begin{equation*}
+\[
 A \vv{v} = \lambda \vv{v} .
-\end{equation*}
+\]
 Recall that to compute eigenvalues you find the roots of $\det(A-\lambda I)
 = 0$, which is a degree $n$ polynomial if $A$ is $n \times n$.  So finding
 the eigenvalues is very hard if $n$ is large (it is very easy if $n=2$ by
@@ -201,12 +204,12 @@ eigenvector, let us take $\vv{v}$ to be a unit vector,
 so that $\vv{v} \cdot \vv{v} = \vv{v}^t \vv{v} = 1$.
 Then parametrize the line through the origin in the direction
 of $\vv{v}$.  That is,
-\begin{equation*}
+\[
 \vv{r}(t) = t\vv{v} .
-\end{equation*}
+\]
 Let us see what are the values of $f$ along the line given by
 $\vv{r}(t)$.  That is we look at
-\begin{equation*}
+\[
 \begin{split}
 f(\vv{r}(t)) & = 
 f(t \vv{v}) = 
@@ -232,7 +235,7 @@ f(t \vv{v}) =
 +
 \cdots 
 \end{split}
-\end{equation*}
+\]
 So along the line given by $\vv{v}$, the function $f$ behaves like
 the quadratic $\frac{\lambda}{2} t^2$ at least near the critical point.
 
@@ -247,7 +250,9 @@ $\frac{\partial^2 f}{\partial x \partial y} =
 \frac{\partial^2 f}{\partial y \partial x}$, so $H_f^t = H_f$.  A symmetric
 matrix always has real eigenvalues (no complex numbers),
 and as many eigenvalues as the matrix has rows (or columns).
-Futhermore, the eigenvectors of a symmetric matrix are orthogonal (at right angles): if $\vv{v}$ and
+Furthermore,
+the eigenvectors of a symmetric matrix are orthogonal (at right angles);
+If $\vv{v}$ and
 $\vv{w}$ are different eigenvectors, then
 $\vv{w} \cdot \vv{v} = \vv{v}^t \vv{w} = 0$.
 
@@ -256,7 +261,7 @@ and $\gamma$, $\vv{w}$ is another eigenvalue / eigenvector pair.  Again
 taking unit eigenvectors, eigenvalues.
 Writing any point $\vv{r}$ in terms of two eigenvectors
 $\vv{r} = t \vv{v} + s \vv{w}$, we find
-\begin{equation*}
+\[
 \begin{split}
 f(\vv{r}) & = 
 \frac{1}{2} (t \vv{v} + s \vv{w})^{t} H_f\big|_{(0,0)} (t \vv{v} + s \vv{w})
@@ -303,7 +308,7 @@ f(\vv{r}) & =
 +
 \cdots 
 \end{split}
-\end{equation*}
+\]
 For a $2 \times 2$ matrix, as in our example, the behavior
 in all other directions is a combination of the two.  In terms
 of $t$ and $s$, the function is $\frac{\lambda}{2} t^2 + \frac{\gamma}{2}
@@ -325,14 +330,14 @@ Let us look at the representative examples.
 \nopagebreak
 
 The model case is when the matrix looks like:
-\begin{equation*}
+\[
 \frac{1}{2} H_f
 =
 \begin{bmatrix}
 1 & 0 \\
 0 & 1
 \end{bmatrix} .
-\end{equation*}
+\]
 We write half the matrix for simplicity.
 The function is $x^2+y^2$, and
 its graph looks like:
@@ -347,14 +352,14 @@ its graph looks like:
 \nopagebreak
 
 The model case is when the matrix looks like:
-\begin{equation*}
+\[
 \frac{1}{2} H_f
 =
 \begin{bmatrix}
 -1 & 0 \\
 0 & -1
 \end{bmatrix} .
-\end{equation*}
+\]
 The function is $-x^2-y^2$, and
 its graph looks like:
 \begin{center}
@@ -367,14 +372,14 @@ its graph looks like:
 \textbf{One positive and one negative eigenvalue:}
 
 The model case is when the matrix looks like:
-\begin{equation*}
+\[
 \frac{1}{2} H_f
 =
 \begin{bmatrix}
 1 & 0 \\
 0 & -1
 \end{bmatrix} .
-\end{equation*}
+\]
 The function is $x^2-y^2$, and
 its graph looks like:
 \begin{center}
@@ -389,7 +394,7 @@ nondegenerate, we figure out the sign of the eigenvalues.
 
 Computing eigenvalues is difficult, but there is a simple way to tell
 the signs.  Notice
-\begin{equation*}
+\[
 \det\left(
 \begin{bmatrix}
 1 & 0 \\
@@ -410,9 +415,9 @@ the signs.  Notice
 0 & -1
 \end{bmatrix}
 \right) = -1 .
-\end{equation*}
+\]
 The determinant of a matrix is a product of the eigenvalues.  Therefore, if
-eigenvalues are of opposite signs, determinant of a $2 \times 2$ matrix is
+eigenvalues are of opposite signs, the determinant of a $2 \times 2$ matrix is
 negative.  Be careful, the reasoning is different in $3 \times 3$, or
 larger, matrices.
 
@@ -430,14 +435,14 @@ positive eigenvalue.
 
 \pagebreak[2]
 \textbf{Example:}  Consider
-$$
+\[
 f(x,y) = 3 x^2 + 7xy  + 5y^2 .
-$$
+\]
 The origin is a critical point.
 We just need to decide, is it a min/max or a
 saddle.
 The Hessian is
-$$
+\[
 H_f \big|_{(0,0)} =
 \begin{bmatrix}
 6 & 7 \\
@@ -456,7 +461,7 @@ H_f \big|_{(0,0)} =
 \right)
 =
 6 \times 10 - 7 \times 7 = 11 .
-$$
+\]
 The product of the eigenvalues is positive, so they are of the same sign.
 The critical point at the origin is either a local minimum or a maximum.
 As the upper left component is 6, it must be that the surface curves
@@ -476,12 +481,12 @@ the ``valley floor'' due to the $0.72$ is harder to discern.
 \pagebreak[2]
 \textbf{Example:} Let us modify our example just a tiny bit.
 Consider
-$$
+\[
 g(x,y) = 3 x^2 + 8xy  + 5y^2 .
-$$
+\]
 Again the origin is a critical point.
 The Hessian is
-$$
+\[
 H_g\big|_{(0,0)} =
 \begin{bmatrix}
 6 & 8 \\
@@ -498,7 +503,7 @@ H_g\big|_{(0,0)} =
 \right)
 =
 6 \times 10 - 8 \times 8 = -4.
-$$
+\]
 So the eigenvalues must be of opposite signs, and the surface must be a
 saddle point.  In fact, they are approximately $-0.25$ and $16.25$.
 The surface turns mostly upwards, but in a certain direction, the one
@@ -518,9 +523,9 @@ For a degenerate Hessian, we can sometimes read off some information, but
 just not everything.  Sometimes, we do not get any information at all.
 
 Consider
-$$
+\[
 f(x,y) = x^2 + y^4 .
-$$
+\]
 It is not difficult to convince yourself that this function is always
 positive except at the origin, when it is zero.  So the origin is a minimum.
 \begin{center}
@@ -528,7 +533,7 @@ positive except at the origin, when it is zero.  So the origin is a minimum.
 \end{center}
 
 However if you compute the Hessian  you find
-$$
+\[
 H_f\big|_{(0,0)} =
 \begin{bmatrix}
 2 & 0 \\
@@ -536,15 +541,15 @@ H_f\big|_{(0,0)} =
 \end{bmatrix} ,
 \qquad \text{so} \qquad
 \det(H_f\big|_{(0,0)}) = 0 .
-$$
+\]
 The eigenvalues are $2$ and $0$.
 The matrix is degenerate (it must have a zero eigenvalue since the
 determinant is zero).  So we can't quite tell from the second derivative.
 
 To see why we can't tell, try
-$$
+\[
 g(x,y) = x^2 - y^4 .
-$$
+\]
 The graph of this is a saddle (Just notice that $g(x,0) = x^2$ and
 $g(0,y) = -y^4$).
 \begin{center}
@@ -552,7 +557,7 @@ $g(0,y) = -y^4$).
 \end{center}
 
 Let's compute the Hessian:
-$$
+\[
 H_g\big|_{(0,0)} =
 \begin{bmatrix}
 2 & 0 \\
@@ -561,7 +566,7 @@ H_g\big|_{(0,0)} =
 ,
 \qquad \text{so} \qquad
 \det(H_g\big|_{(0,0)}) = 0 .
-$$
+\]
 The Hessian is the same as for $f$ above, so clearly we cannot decide
 if it is a saddle or a minimum
 from $H_g$ and $H_f$.  One thing that we can read off, is that the critical
@@ -571,7 +576,7 @@ direction, we know that the function
 has a minimum.  So there is no way the function has a maximum.
 
 So if a function has a minimum, then all the eigenvalues are positive or
-zero.  If the function has a maximum then all the functions are negative or
+zero.  If the function has a maximum, then all the functions are negative or
 zero.  But just because a function has only positive or zero eigenvalues
 does not mean the function has a minimum.
 
@@ -580,9 +585,9 @@ does not mean the function has a minimum.
 When the Hessian is degenerate,
 one has to be careful with trying to just check for extrema (min or max) on
 lines.  Consider
-$$
+\[
 f(x,y) = (y-x^2)(2x^2-y) .
-$$
+\]
 This function is zero on the sets where $y=x^2$ and $y=2x^2$, the two
 parabolas in the following picture.  It is negative outside the space
 between these two lines and positive between the two lines.
@@ -594,21 +599,21 @@ $\theta$, and consider the line through the origin at the angle
 $\theta$ to the positive $x$-axis.
 This line is given by $\vv{r}(t) = \bigl\langle t \cos(\theta),t
 \sin(\theta)\bigr\rangle$.  Then the restriction of $f$ to this line is
-$$
+\[
 f\bigl(\vv{r}(t)\bigr) = f\bigl(t\cos(\theta),t\sin (\theta)\bigr) .
-$$
+\]
 For any $\theta$, $f\bigl(\vv{r}(t)\bigr)$ has a strict maximum at $t=0$.
 By a strict maximum we mean that the function is actually
 strictly less than zero for $t$ near zero.
 In fact, except for when $\theta=0$ or $\theta=\pi$, we find
-$$
+\[
 \frac{d^2}{dt^2} \Bigl[ f \bigl( \vv{r}(t) \bigr) \Bigr] < 0
-$$
+\]
 so it is a maximum (a strict one).  When $\theta = 0$ , this corresponds to
 $y=0$, and so
-$$
+\[
 f \bigl( \vv{r}(t) \bigr) = -2t^4 ,
-$$
+\]
 which clearly has a strict maximum.
 
 But $f$ is a saddle!  It is just a ``bent saddle.''
@@ -620,7 +625,7 @@ also have points where $f$ is positive or where $f$ is negative arbitrarily
 near the origin.
 
 A computation shows that
-$$
+\[
 H_f\big|_{(0,0)} =
 \begin{bmatrix}
 0 & 0 \\
@@ -629,7 +634,7 @@ H_f\big|_{(0,0)} =
 ,
 \qquad \text{so} \qquad
 \det(H_f) = 0 .
-$$
+\]
 So we wouldn't be any smarter from looking at the Hessian.
 
 The moral of the story is that if the Hessian has zero eigenvalues, you
@@ -646,7 +651,7 @@ Let's consider 3 variables, with $n$ variables being exactly the same
 idea.
 If $f(x,y,z)$ is a function of three variables, then
 the Hessian is the matrix
-\begin{equation*}
+\[
 H_f
 =
 \begin{bmatrix}
@@ -662,7 +667,7 @@ H_f
 \frac{\partial^2 f}{\partial z \partial y} &
 \frac{\partial^2 f}{\partial z^2}
 \end{bmatrix} .
-\end{equation*}
+\]
 
 Again, a critical point is a minimum if $H_f$ has 3 positive eigenvalues, it
 is a maximum if it has 3 negative eigenvalues and it is a saddle point if it
@@ -674,12 +679,12 @@ just from looking at the Hessian.
 
 \textbf{Example:}
 Let
-$$
+\[
 f(x,y,z) = 3x^2 + xz + 2zy - z^2 .
-$$
+\]
 The origin is the unique critical point.
 The Hessain matrix at the origin is
-\begin{equation*}
+\[
 H_f\big|_{(0,0,0)}
 =
 \begin{bmatrix}
@@ -691,18 +696,18 @@ H_f\big|_{(0,0,0)}
 \text{so}
 \qquad
 \det(H_f\big|_{(0,0,0)}) = -24 < 0 .
-\end{equation*}
+\]
 The determinant (the product of eigenvalues)
 is negative, so at least one eigenvalue is negative.  So this cannot
 possibly be a minimum.  But we cannot yet decide if it is a max or a saddle.
 However, we know we will be able to tell since it is nondegenerate.  We just
 have to try harder.
-If we would restrict to the $x$ variable, setting $y=z=0$, then we just
+If we restrict to the $x$ variable, setting $y=z=0$, then we just
 get the function $3x^2$, whose second derivative is $6$.  That is the $6$
 in the top left corner.  Just as for the $2$ variable case, we can decide
 that one of the eigenvalues must be positive since one of the diagonal
 entries is positive.
-Since we already know we have at least one negative eigenvalue.
+Since we already know that we have at least one negative eigenvalue.
 The critical point must be a saddle.
 
 Alternatively, we didn't even have to compute the determinant.  Looking at
@@ -720,12 +725,12 @@ approximately $-3.31, 6.13, 1.18$.  So one negative and two positive.
 
 \textbf{Another example:}
 Let
-$$
+\[
 f(x,y,z) = -9x^2 + 6xy -2y^2 -2xz -2 z^2 .
-$$
+\]
 The origin is a critical point.
 The Hessian matrix is
-\begin{equation*}
+\[
 H_f\big|_{(0,0,0)}
 =
 \begin{bmatrix}
@@ -737,17 +742,17 @@ H_f\big|_{(0,0,0)}
 \text{so}
 \qquad
 \det(H_f\big|_{(0,0,0)}) = -72 < 0 .
-\end{equation*}
+\]
 Again, negative, so at least one (or possibly all three) eigenvalues are
-negative.  In this case one finds that the eigenvalues are
+negative.  In this case, one finds that the eigenvalues are
 approximately $-20.25, -0.70, -5.05$.  So all three are negative.
 and the critical point is a minimum.
 
 There is again a quick way of figuring out all three eigenvalues are
 negative without computing them.  If we simply move in the $xy$ space,
 setting $z=0$,
-then the function should still be a minimum of two variables.  In other
-words the 
+then the function should still be a minimum of two variables.
+In other words, the 
 the first $2 \times 2$ principal submatrix,
 $\left[ \begin{smallmatrix} -18 & 6 \\ 6 & -4 \end{smallmatrix} \right]$,
 should have only negative eigenvalues.  Its determinant should be positive.
@@ -757,7 +762,7 @@ If the top left
 entry is negative, the first $2 \times 2$ principal submatrix has positive
 determinant, and the full matrix has negative determinant, then the
 eigenvalues are all negative.  In this case 
-\begin{equation*}
+\[
 -18 < 0,
 \qquad
 \det \left(
@@ -774,21 +779,21 @@ eigenvalues are all negative.  In this case
 0 & -2 & -4
 \end{bmatrix}
 \right) = -72 < 0 .
-\end{equation*}
-Basically you have to do some linear algebra to figure
+\]
+Basically, you have to do some linear algebra to figure
 out the signs of the eigenvalues, but you don't need to
 actually compute them.
 
 Note that it is not enough to just check the diagonal entries.  The fact
 that all three are negative just says that there is at least one negative
 eigenvalue.  For example, 
-$$
+\[
 \begin{bmatrix}
 -1 & 1 & 1 \\
 1 & -1 & 1 \\
 1 & 1 & -1
 \end{bmatrix}
-$$
+\]
 has eigenvalues $1,-2,-2$ (the $-2$ is repeated), so there are two negative
 eigenvalues, but also a positive one, despite all diagonal entries being
 negative.
@@ -797,16 +802,16 @@ So a general to figure out the signs of the eigenvalues for
 a 3 by 3 (and this generalizes to $n$ by $n$) symmetric matrix is
 the technique we just used above.
 A symmetric matrix
-\begin{equation*}
+\[
 \begin{bmatrix}
 a & b & c \\
 b & d & e \\
 c & e & f
 \end{bmatrix}
-\end{equation*}
+\]
 has 
 three positive eigenvalues if
-\begin{equation*}
+\[
 a > 0,
 \qquad
 \det \left(
@@ -823,9 +828,9 @@ b & d & e \\
 c & e & f
 \end{bmatrix}
 \right) > 0 .
-\end{equation*}
+\]
 It has three negative eigenvalues if
-\begin{equation*}
+\[
 a < 0,
 \qquad
 \det \left(
@@ -842,10 +847,10 @@ b & d & e \\
 c & e & f
 \end{bmatrix}
 \right) < 0 .
-\end{equation*}
+\]
 Computing determinants is a lot easier and a lot faster than computing the
 actual eigenvalues.
-If you do not get any zeros but the signs do not correspond to one of the
+If you do not get any zeros, but the signs do not correspond to one of the
 above, then you have some combination of positive and negative eigenvalues
 and the critical point is a saddle.
 
@@ -864,20 +869,20 @@ $f(x,y) = -x^2-y^2 + \cdots$.
 That should surely make some computations simpler.
 
 We have
-$$
+\[
 f(x,y) = f(x_0,y_0) \, + \,
 \nabla f\big|_{(x_0,y_0)} \cdot \vv{h}
 \, + \,
 \frac{1}{2} \vv{h}^{t} H_f\big|_{(x_0,y_0)} \vv{h} \,
 + \cdots
-$$
+\]
 
 The first thing to do is to make some new coordinates where $(x_0,y_0)$ is
 $(0,0)$.  So let $u = x-x_0$ and $v=y-y_0$.  As $x = u+x_0$ and $y = v+y_0$,
 write
-\begin{equation*}
+\[
 g(u,v) = f(u+x_0,v+y_0).
-\end{equation*}
+\]
 The chain rule says that any derivative of $g$ is the same as the derivative
 of $f$, just evaluated at the other point.  So
 \begin{multline*}
@@ -892,7 +897,7 @@ of $f$, just evaluated at the other point.  So
 \end{multline*}
 
 The function $g$ near the origin is expanded as
-\begin{equation*}
+\[
 \begin{split}
 g(u,v) & = g(0,0) \, + \,
 \nabla g\big|_{(0,0)} \cdot \vv{h}
@@ -907,16 +912,16 @@ f(x_0,y_0) \, + \,
 \frac{1}{2} \vv{h}^{t} H_f\big|_{(x_0,y_0)} \vv{h} \,
 + \cdots
 \end{split}
-\end{equation*}
+\]
 where $\vv{h} = \langle u,v \rangle = \langle x-x_0, y-y_0 \rangle$.
 That is the expansion of $f(x,y)$ around $(x_0,y_0)$.
 
 OK, we got any point to be the origin.  Let's see how we can diagonalize
 $H_g$.  Given any symmetric matrix $A$ it is possible to find a matrix
 $S$, such that
-\begin{equation*}
+\[
 A = S^t D S
-\end{equation*}
+\]
 where $D$ is a diagonal matrix with just $1$s, $-1$s, and $0$s on the
 diagonal.  To find the matrix $S$ we take a matrix of unit eigenenvectors 
 and multiply by a diagonal matrix whose entries are the square roots
@@ -938,12 +943,12 @@ or
 $\left[ \begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix} \right]$.
 
 So find an $S$ such that
-\begin{equation*}
+\[
 H_g\big|_{(0,0)} = S^t D S .
-\end{equation*}
+\]
 The change of coordinates is
 $S \vv{h} = \vv{k}$ for some $\vv{k}$.   Then
-\begin{equation*}
+\[
 \vv{h}^t H_g\big|_{(0,0)} \vv{h}
 =
 \vv{h}^t S^t D S \vv{h}
@@ -951,10 +956,10 @@ $S \vv{h} = \vv{k}$ for some $\vv{k}$.   Then
 (S\vv{h})^t D S \vv{h}
 =
 \vv{k}^t D \vv{k} .
-\end{equation*}
+\]
 Aha!  Let the variables be $s$ and $t$, and let
 $\vv{k} = \langle s,t \rangle$ be given by
-\begin{equation*}
+\[
 \begin{bmatrix} s \\ t \end{bmatrix}
 =
 \vv{k} =
@@ -962,23 +967,23 @@ S \vv{h}
 =
 S
 \begin{bmatrix} u \\ v \end{bmatrix} ,
-\end{equation*}
+\]
 or
-\begin{equation*}
+\[
 \begin{bmatrix} u \\ v \end{bmatrix}
 =
 S^{-1}
 \begin{bmatrix} s \\ t \end{bmatrix} 
 =
 S^{-1} \vv{k} .
-\end{equation*}
+\]
 Let
-\begin{equation*}
+\[
 \varphi(s,t) = \varphi(\vv{k}) = g(S^{-1}\vv{k}) .
-\end{equation*}
+\]
 The expansion of $\varphi$ around the origin
 is
-\begin{equation*}
+\[
 \begin{split}
 \varphi(s,t) & = \varphi(0,0) \, + \,
 \nabla \varphi\big|_{(0,0)} \cdot \vv{k}
@@ -993,7 +998,7 @@ is
 \frac{1}{2} \vv{k}^{t} D \vv{k} \,
 + \cdots
 \end{split}
-\end{equation*}
+\]
 If $\nabla f\big|_{(x_0,y_0)} = \vv{0}$, or in other words if $\nabla
 \varphi\big|_{(0,0)} = \vv{0}$, then, as $D$
 is one of the three forms,
@@ -1019,23 +1024,23 @@ $-s^2-t^2 + \cdots$.
 
 \textbf{Example:}
 Consider
-$$
+\[
 f(x,y) = 3x+x^2+xy+y^2.
-$$
+\]
 The critical point of $f$ is where the derivative vanishes.  We leave it as
 an exercise to show that there is one critical point and that is
 where at $(-2,1)$.
 We write $g(u,v) = f(u-2,v+1)$.  The Hessian is the matrix
-\begin{equation*}
+\[
 H_f\big|_{(x_0,y_0)} = H_g\big|_{(0,0)}
 =
 \begin{bmatrix}
 2 & 1 \\
 1 & 2
 \end{bmatrix} .
-\end{equation*}
+\]
 The eigenvalues are $3$ and $1$, and the unit eigenvectors are 
-\begin{equation*}
+\[
 \frac{1}{\sqrt{2}}
 \begin{bmatrix}
 1 \\
@@ -1046,9 +1051,9 @@ The eigenvalues are $3$ and $1$, and the unit eigenvectors are
 1 \\
 -1
 \end{bmatrix} .
-\end{equation*}
+\]
 The matrix $S$ according to the prescription above is
-\begin{equation*}
+\[
 S =
 \begin{bmatrix}
 \sqrt{3} & 0 \\
@@ -1067,17 +1072,17 @@ S =
 \frac{1}{\sqrt{2}} &
 \frac{-1}{\sqrt{2}} 
 \end{bmatrix} .
-\end{equation*}
+\]
 And the matrix $D$ is just
-\begin{equation*}
+\[
 D =
 \begin{bmatrix}
 1 & 0 \\
 0 & 1
 \end{bmatrix} .
-\end{equation*}
+\]
 Then
-\begin{equation*}
+\[
 S^{-1} =
 \begin{bmatrix}
 \frac{1}{\sqrt{6}} &
@@ -1085,9 +1090,9 @@ S^{-1} =
 \frac{1}{\sqrt{6}} &
 \frac{-1}{\sqrt{2}}
 \end{bmatrix} .
-\end{equation*}
+\]
 So
-\begin{equation*}
+\[
 s
 =\sqrt{\frac{3}{2}} u +
 \sqrt{\frac{3}{2}} v 
@@ -1096,21 +1101,21 @@ s
 t
 = \frac{1}{\sqrt{2}} u + \frac{-1}{\sqrt{2}} v 
 = \frac{1}{\sqrt{2}} (x-x_0) + \frac{-1}{\sqrt{2}} (y-y_0) ,
-\end{equation*}
+\]
 or
-\begin{equation*}
+\[
 x-x_0 = x+2 = u = 
 \frac{1}{\sqrt{6}} s + 
 \frac{1}{\sqrt{2}} t , \qquad
 y-y_0 = x-1 = v = \frac{1}{\sqrt{6}} s + 
 \frac{-1}{\sqrt{2}} t .
-\end{equation*}
+\]
 Solve for $x$ and $y$, and plug into $f$ and check that this change
 of variables really does give you
-\begin{equation*}
+\[
 \varphi(s,t) = -3 + \frac{1}{2} ( s^2 + t^2 ) = 3x + x^2+xy+y^2 .
-\end{equation*}
-The $-3$ is the $f(x_0,y_0) = f(-2,1)$.  There are no higher order terms
+\]
+The $-3$ is the value $f(x_0,y_0) = f(-2,1)$.  There are no higher order terms,
 as $f$ had no higher order terms.
 
 \end{document}
