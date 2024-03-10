@@ -106,10 +106,10 @@ second order approximation ought to be the best quadratic polynomial that
 approximates the function.
 Thus, if we look at a quadratic polynomial,
 its Taylor expansion up second order should be the
-same polynomial,
+same polynomial
 since it itself should be its best
 quadratic approximation.
-So consider, $f(x,y) = 1 + 2x + 3y + 4x^2+ 5xy + 6y^2$.  Compute
+So consider $f(x,y) = 1 + 2x + 3y + 4x^2+ 5xy + 6y^2$.  Compute
 \[
 \frac{\partial f}{\partial x} = 2 + 4 \cdot 2x + 5y, \qquad
 \frac{\partial^2 f}{\partial x^2} = 4 \cdot 2, \qquad
@@ -155,13 +155,13 @@ f(x,y) = 40 + 23(x-2) + 25 (y-1) + \frac{1}{2} 8 (x-2)^2 + 5 (x-2)(y-1) +
 
 \medskip
 
-The first order approximation gave us the gradient and thus the
-steepness of the graph of $f$.  The second order approximation tells us how
+The first-order approximation gave us the gradient and thus the
+steepness of the graph of $f$.  The second-order approximation tells us how
 the graph curves.  One particular application is in optimization, that is,
 to find minima and maxima of functions, or to simply understand how a
 function behaves near a critical point.
 
-First, what is a critical point:  It is a point where the gradient is zero.
+First, what is a critical point?  It is a point where the gradient is zero.
 These are the candidates for maxima and minima, since at the top of the
 hill, or a bottom of a valley we find that the tangent plane is horizontal,
 that is, the gradient $\nabla f = \vv{0}$ is zero,
@@ -180,7 +180,7 @@ f(x,y) = \frac{1}{2} \vv{h}^{t} H_f\big|_{(0,0)} \vv{h}
 where the dots are higher order terms in the Taylor expansion.
 So near the origin, $f$ behaves like a quadratic form.
 Suppose that $H_f$ is nondegenerate, that is, it has
-no zero eigenvalues, in other words it is invertible.
+no zero eigenvalues; in other words, it is invertible.
 
 What is an \emph{eigenvalue} of a matrix $A$?
 It is a value $\lambda$ for which there exists
@@ -188,13 +188,13 @@ a nonzero vector $\vv{v}$, called an \emph{eigenvector}, such that
 \[
 A \vv{v} = \lambda \vv{v} .
 \]
-Recall that to compute eigenvalues you find the roots of $\det(A-\lambda I)
+Recall that to compute the eigenvalues, you find the roots of $\det(A-\lambda I)
 = 0$, which is a degree $n$ polynomial if $A$ is $n \times n$.  So finding
-the eigenvalues is very hard if $n$ is large (it is very easy if $n=2$ by
-using the quadratic formula).  To find an eigenvector is easy once you know
+the eigenvalues is quite difficult if $n$ is large (it is very easy if $n=2$ by
+using the quadratic formula).  Finding an eigenvector is easy once you know
 the eigenvalue: You simply find a nonzero solution to $(A-\lambda I) \vv{v}
 = \vv{0}$.  That is just gaussian elimination.  Having the eigenvalues
-and eigenvectors tells us everything about the matrix, but as we said
+and eigenvectors tells us everything about the matrix, but as we said,
 it is in general a hard problem.  Some questions (but not all)
 about $A$ (and hence $H_f$) we can answer without knowing the eigenvalues.
 
@@ -207,7 +207,7 @@ of $\vv{v}$.  That is,
 \[
 \vv{r}(t) = t\vv{v} .
 \]
-Let us see what are the values of $f$ along the line given by
+Let us consider the values of $f$ along the line given by
 $\vv{r}(t)$.  That is we look at
 \[
 \begin{split}
@@ -256,7 +256,7 @@ If $\vv{v}$ and
 $\vv{w}$ are different eigenvectors, then
 $\vv{w} \cdot \vv{v} = \vv{v}^t \vv{w} = 0$.
 
-Suppose that $\lambda$, $\vv{v}$ is an eigenvalue / eigenvector pair,
+Suppose that $\lambda$, $\vv{v}$ is an eigenvalue / eigenvector pair
 and $\gamma$, $\vv{w}$ is another eigenvalue / eigenvector pair.  Again
 taking unit eigenvectors, eigenvalues.
 Writing any point $\vv{r}$ in terms of two eigenvectors
@@ -322,7 +322,7 @@ enough to understand the matrix in the direction of the eigenvectors.
 There are three possible cases in the plane as the Hessian
 is $2 \times 2$:  Two positive eigenvalues,
 two negative eigenvalues, or a positive and a negative.
-Let us look at the representative examples.
+Let us examine the representative examples.
 
 \bigskip
 
@@ -520,14 +520,13 @@ previous graph.
 \section*{Degenerate Hessian}
 
 For a degenerate Hessian, we can sometimes read off some information, but
-just not everything.  Sometimes, we do not get any information at all.
-
+just not everything.  Sometimes we do not get any information at all.
 Consider
 \[
 f(x,y) = x^2 + y^4 .
 \]
 It is not difficult to convince yourself that this function is always
-positive except at the origin, when it is zero.  So the origin is a minimum.
+positive, except at the origin, when it is zero.  So the origin is a minimum.
 \begin{center}
 \includegraphics[width=3.65in]{degenerate-min.pdf}
 \end{center}
@@ -543,14 +542,14 @@ H_f\big|_{(0,0)} =
 \det(H_f\big|_{(0,0)}) = 0 .
 \]
 The eigenvalues are $2$ and $0$.
-The matrix is degenerate (it must have a zero eigenvalue since the
+The matrix is degenerate (it must have a zero eigenvalue, since the
 determinant is zero).  So we can't quite tell from the second derivative.
 
 To see why we can't tell, try
 \[
 g(x,y) = x^2 - y^4 .
 \]
-The graph of this is a saddle (Just notice that $g(x,0) = x^2$ and
+The graph of this is a saddle (just notice that $g(x,0) = x^2$ and
 $g(0,y) = -y^4$).
 \begin{center}
 \includegraphics[width=3.65in]{degenerate-saddle.pdf}
@@ -569,13 +568,13 @@ H_g\big|_{(0,0)} =
 \]
 The Hessian is the same as for $f$ above, so clearly we cannot decide
 if it is a saddle or a minimum
-from $H_g$ and $H_f$.  One thing that we can read off, is that the critical
+from $H_g$ and $H_f$.  One thing that we can read off is that the critical
 point of either $g$ or $f$ is definitely not a maximum.
-Along the direction of the positive eigenvalue 2, that is in the $x$
+Along the direction of the positive eigenvalue 2, that is, in the $x$
 direction, we know that the function
 has a minimum.  So there is no way the function has a maximum.
 
-So if a function has a minimum, then all the eigenvalues are positive or
+So if a function has a minimum, then all eigenvalues are positive or
 zero.  If the function has a maximum, then all the functions are negative or
 zero.  But just because a function has only positive or zero eigenvalues
 does not mean the function has a minimum.
@@ -595,7 +594,7 @@ between these two lines and positive between the two lines.
 \includegraphics[width=3.65in]{peanocurves}
 \end{center}
 Suppose we restrict the function to any line. For example, we pick an angle
-$\theta$, and consider the line through the origin at the angle 
+$\theta$ and consider the line through the origin at the angle
 $\theta$ to the positive $x$-axis.
 This line is given by $\vv{r}(t) = \bigl\langle t \cos(\theta),t
 \sin(\theta)\bigr\rangle$.  Then the restriction of $f$ to this line is
@@ -603,7 +602,7 @@ This line is given by $\vv{r}(t) = \bigl\langle t \cos(\theta),t
 f\bigl(\vv{r}(t)\bigr) = f\bigl(t\cos(\theta),t\sin (\theta)\bigr) .
 \]
 For any $\theta$, $f\bigl(\vv{r}(t)\bigr)$ has a strict maximum at $t=0$.
-By a strict maximum we mean that the function is actually
+By a strict maximum, we mean that the function is actually
 strictly less than zero for $t$ near zero.
 In fact, except for when $\theta=0$ or $\theta=\pi$, we find
 \[
@@ -638,8 +637,8 @@ H_f\big|_{(0,0)} =
 So we wouldn't be any smarter from looking at the Hessian.
 
 The moral of the story is that if the Hessian has zero eigenvalues, you
-might have to get tricky to figure out what kind of critical point you have.
-There is no simple $n$th derivative test as there is for one variable functions.
+might have to get creative to figure out what kind of critical point you have.
+There is no simple $n$th derivative test, as there is for one variable functions.
 
 On the other hand, if the Hessian is nondegenerate, that is, it has no
 zero eigenvalues, then we did answer the question by looking at lines, since
@@ -670,9 +669,9 @@ H_f
 \]
 
 Again, a critical point is a minimum if $H_f$ has 3 positive eigenvalues, it
-is a maximum if it has 3 negative eigenvalues and it is a saddle point if it
+is a maximum if it has 3 negative eigenvalues, and it is a saddle point if it
 has at least one positive and one negative eigenvalue.  And if it has a
-zero eigenvalue, then we can't tell how the function looks near the origin
+zero eigenvalue, then we cannot tell how the function looks near the origin
 just from looking at the Hessian.
 
 \bigskip
@@ -698,7 +697,7 @@ H_f\big|_{(0,0,0)}
 \det(H_f\big|_{(0,0,0)}) = -24 < 0 .
 \]
 The determinant (the product of eigenvalues)
-is negative, so at least one eigenvalue is negative.  So this cannot
+is negative, so at least one eigenvalue is negative.  This cannot
 possibly be a minimum.  But we cannot yet decide if it is a max or a saddle.
 However, we know we will be able to tell since it is nondegenerate.  We just
 have to try harder.
