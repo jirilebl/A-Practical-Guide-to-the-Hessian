@@ -26,6 +26,9 @@
 \newcommand{\snorm}[1]{\lVert {#1} \rVert}
 \newcommand{\sabs}[1]{\lvert {#1} \rvert}
 
+% discourage pagebreak at end of display, put before \end{equation}
+\newcommand{\avoidbreak}{\postdisplaypenalty=100}
+
 \title{A Practical Guide to the Hessian}
 \author{Ji\v{r}\'i Lebl}
 
@@ -135,8 +138,8 @@ So
 f(x,y) = 1 + 2 x + 3 y + \frac{1}{2} 8 x^2 + 5 xy + \frac{1}{2} 12 y^2 ,
 \]
 and lo and behold we got the same polynomial.
-Since we have the derivatives computed, we can also expand around another
-point.  For example, let us expand around the point $(2,1)$
+Since we have the derivatives computed, we can expand around other
+points.  For example, expand around the point $(2,1)$.  First,
 \[
 f(2,1) = 40, \qquad
 \frac{\partial f}{\partial x}\Big|_{(2,1)} = 23, \qquad
@@ -163,9 +166,9 @@ function behaves near a critical point.
 
 First, what is a critical point?  It is a point where the gradient is zero.
 These are the candidates for maxima and minima, since at the top of the
-hill, or a bottom of a valley we find that the tangent plane is horizontal,
+hill or a bottom of a valley, we find that the tangent plane is horizontal,
 that is, the gradient $\nabla f = \vv{0}$ is zero,
-or in other words, where
+or in other words,
 $\frac{\partial f}{\partial x} = 0$ and
 $\frac{\partial f}{\partial y} = 0$.
 
@@ -612,6 +615,7 @@ so it is a maximum (a strict one).  When $\theta = 0$ , this corresponds to
 $y=0$, and so
 \[
 f \bigl( \vv{r}(t) \bigr) = -2t^4 ,
+\avoidbreak
 \]
 which clearly has a strict maximum.
 
